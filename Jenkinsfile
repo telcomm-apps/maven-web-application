@@ -29,6 +29,7 @@ catch(e){
 finally{
   sendSlackNotifications(currentBuild.result)
 }
+}
 //slack notification
 def sendSlackNotifications(String buildStatus = 'STARTED') {
   // build status of null means successful
