@@ -5,6 +5,7 @@ echo "the node name is : ${env.NODE_NAME}"
 echo "the jenkins hme directory is : ${env.JENKINS_HOME}"
 properties([buildDiscarder(logRotator(artifactDaysToKeepStr: '', artifactNumToKeepStr: '5', daysToKeepStr: '', numToKeepStr: '5')), [$class: 'JobLocalConfiguration', changeReasonComment: ''], pipelineTriggers([pollSCM('* * * * *')])])
   try{
+    sendSlackNotifications('STARTED')
 stage('CheckoutCode'){
 git branch: 'development', credentialsId: 'ae0b84b1-cb2d-4a71-894e-297682504fd7', url: 'https://github.com/telcomm-apps/maven-web-application.git'
 }
