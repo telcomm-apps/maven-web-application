@@ -31,7 +31,7 @@ finally{
   sendSlackNotifications(currentBuild.result)
 }
 }
-//slack notification
+/*//slack notification
 def sendSlackNotifications(String buildStatus = 'STARTED') {
   // build status of null means successful
   buildStatus =  buildStatus ?: 'SUCCESS'
@@ -56,4 +56,4 @@ def sendSlackNotifications(String buildStatus = 'STARTED') {
 
   // Send notifications
   slackSend (color: colorCode, message: summary,channel: '#icicibank')
-}
+}*/
