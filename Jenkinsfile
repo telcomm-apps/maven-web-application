@@ -3,7 +3,7 @@ def mavenHome = tool name: "maven3.8.6"
 echo "the job name is : ${env.JOB_NAME}"
 echo "the node name is : ${env.NODE_NAME}"
 echo "the jenkins hme directory is : ${env.JENKINS_HOME}"
-properties([buildDiscarder(logRotator(artifactDaysToKeepStr: '', artifactNumToKeepStr: '5', daysToKeepStr: '', numToKeepStr: '5')), [$class: 'JobLocalConfiguration', changeReasonComment: ''], pipelineTriggers([pollSCM('* * * * *')])])*/
+properties([buildDiscarder(logRotator(artifactDaysToKeepStr: '', artifactNumToKeepStr: '5', daysToKeepStr: '', numToKeepStr: '5')), [$class: 'JobLocalConfiguration', changeReasonComment: ''], pipelineTriggers([pollSCM('* * * * *')])])
  try{
     sendSlackNotifications('STARTED')
 stage('CheckoutCode'){
