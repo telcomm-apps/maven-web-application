@@ -24,12 +24,12 @@ sh "scp -o StrictHostKeyChecking=no target/maven-web-application.war ec2-user@17
 }
 }*/
 //}//try end
-catch(e){
+/*catch(e){
   currentBuild.result = "FAILURE"
   }
 finally{
   sendSlackNotifications(currentBuild.result)
-}
+}*/
 }
 /*//slack notification
 def sendSlackNotifications(String buildStatus = 'STARTED') {
