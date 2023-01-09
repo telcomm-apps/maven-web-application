@@ -7,7 +7,7 @@ properties([buildDiscarder(logRotator(artifactDaysToKeepStr: '', artifactNumToKe
   try{
     sendSlackNotifications('STARTED')
 stage('CheckoutCode'){
-git branch: 'development', credentialsId: 'ae0b84b1-cb2d-4a71-894e-297682504fd7', url: 'https://github.com/telcomm-apps/maven-web-application.git'
+git branch: 'stage', credentialsId: 'e368c193-068f-4853-af28-232e8e8d7473', url: 'https://github.com/telcomm-apps/maven-web-application.git'
 }
 stage('Build'){
 sh "${mavenHome}/bin/mvn clean package"
